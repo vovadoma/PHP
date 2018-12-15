@@ -1,3 +1,7 @@
 <?php
 
-echo 1;
+require "home.php";
+indexHome();
+
+
+

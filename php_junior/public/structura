@@ -1,0 +1,29 @@
+
+index.php - require контроллеры, indexHome()
+
+/assets
+-/css
+-/js
+-/image
+-/file
+
+/config
+config.php - noImage
+
+/models
+model.php - getDataItems(), getDataImages()
+
+/controllers - модели
+home.php - функция indexHome(), getPrice(), getImage(), writeArrItem()
+admin.php - indexAdmin() табличка
+
+/templates
+-/components
+https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure
+header.php - все для html и css <head></head> <header>
+navibar.php - пусто
+......
+home.php - осноной с циклом вывод карточек <article></article>
+admin.php - табличка товаров
+......
+footer.php <footer></footer>
