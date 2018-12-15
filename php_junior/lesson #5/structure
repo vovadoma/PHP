@@ -1,0 +1,33 @@
+Задание. Создать структуру каталогов по этому примеру.
+
+
+index.php - require контроллеры, indexHome() из /controllers/home.php
+
+/assets
+-/css
+-/js
+-/image
+-/file
+
+/config
+config.php - noImage добавляем сюда и функцию getNoImage()
+
+/models
+model.php - getDataItems(), getDataImages() массивы данных перемещаем сюда и оборачиваем в функции
+
+/controllers
+home.php - функция indexHome(), getPrice(), getImage(), writeArrItem()
+admin.php - indexAdmin() табличка
+
+/templates
+-/components - сюда помещаем карточку
+header.php - все для html и css <head></head> <header>
+navibar.php - пусто
+......
+home.php - осноной с циклом вывод карточек <article></article>
+admin.php - табличка товаров
+......
+footer.php <footer></footer>
+
+Пример HTML документа
+https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure
