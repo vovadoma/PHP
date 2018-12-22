@@ -3,6 +3,27 @@ require 'models/model.php';
 
 
 function indexHome(){
+
+
+    if (!empty($_POST)) {
+        //........ сохраняем сесии и куки
+
+        header('Location: ../index.php'); // редирект на GET посмотрине в Networks
+        exit;
+    }
+
+
+
+    ?>
+
+    <form method="post">
+        Are you sure: <input type="checkbox"/>
+        <input name="check" type="submit"/>
+    </form>
+
+    <?php
+
+
     $items=getDataItems();
     $images=getDataImages();
     $noImage=getNoImage();
@@ -48,6 +69,3 @@ function writeArrItemPriceAndImage($f_item){
     $f_item['img']=$itemImage;//добавление нового элемента 'img' в массив
     return $f_item;
 }
-
-?>
-

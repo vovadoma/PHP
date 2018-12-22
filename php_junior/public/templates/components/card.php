@@ -9,4 +9,3 @@
            <div class="card-footer bg-transparent border-success">Цена - <strong><?php echo $item['priceDisc'] ?></strong>грн.</div>
        </div>
    </div>
-   <?php// echo getcwd(); ?>
