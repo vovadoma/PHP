@@ -4,30 +4,11 @@ require 'models/model.php';
 
 function indexHome(){
 
+    $model = new Model();
 
-    if (!empty($_POST)) {
-        //........ сохраняем сесии и куки
+    $items=$model->getDataItems();
+    $images=$model->getDataImages();
 
-        header('Location: ../index.php'); // редирект на GET посмотрине в Networks
-        exit;
-    }
-
-
-
-    ?>
-
-    <form method="post">
-        Are you sure: <input type="checkbox"/>
-        <input name="check" type="submit"/>
-    </form>
-
-    <?php
-
-
-    $items=getDataItems();
-    $images=getDataImages();
-    $noImage=getNoImage();
-    $items=array_map('writeArrItemPriceAndImage',$items);
 
     include 'templates/header.php';
     include 'templates/home.php';
