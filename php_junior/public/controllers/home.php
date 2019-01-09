@@ -9,10 +9,19 @@ function indexHome(){
     $items=$model->getDataItems();
     $images=$model->getDataImages();
 
+    $data = [
+        'items' => $items,
+        'last3Items' => $filteredItems,
+        'coockieOk' => $this->checkCookie()
+    ];
 
-    include 'templates/header.php';
-    include 'templates/home.php';
-    include 'templates/footer.php';
+    $this->view('home', $data);
+
+}
+
+public function view($template, $data) {
+    extract($data);
+    include(''.$template.'.php');
 }
 
 function getPrice($itemPrice)
@@ -50,3 +59,4 @@ function writeArrItemPriceAndImage($f_item){
     $f_item['img']=$itemImage;//добавление нового элемента 'img' в массив
     return $f_item;
 }
+

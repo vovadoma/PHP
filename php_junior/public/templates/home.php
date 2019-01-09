@@ -12,4 +12,10 @@
 	</div>
 	</article>
 
+
+
+    <?php if (!$coockieOk) {
+        include('cookie_form.php');
+     } ?>
+
 </main>

@@ -45,5 +45,6 @@ class Database {
             printf($this->connection->connect_error);
             exit();
         }
+        $this->connection->set_charset("utf8");
     }
 }

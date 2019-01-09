@@ -18,3 +18,8 @@ $controller->index();
 
 5) В Admin контроллере тоже используем Model для получения данных из базы. Модели общие для home и admin.
 
+======
+
+6) Общие функции выносим в core - functions.php, работа с csv в classes.php как $csv::saveFile() -> CsvClass::saveFile()
+$csv = CsvClass::class;
+
