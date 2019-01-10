@@ -19,6 +19,8 @@ function indexHome(){
 
 }
 
+
+
 public function view($template, $data) {
     extract($data);
     include(''.$template.'.php');
