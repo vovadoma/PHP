@@ -18,5 +18,8 @@ $db = Database::getInstance($config);
 $db_connect = $db->connection;
 
 
-indexHome();
+//indexHome();
+
+
+indexAd();
 

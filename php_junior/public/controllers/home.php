@@ -50,3 +50,13 @@ function writeArrItemPriceAndImage($f_item){
     $f_item['img']=$itemImage;//добавление нового элемента 'img' в массив
     return $f_item;
 }
+
+function indexAd(){
+    $model = new Model();
+    $items = $model->getCars();
+    echo json_encode($items);
+}
+
+function indexCars() {
+
+}
