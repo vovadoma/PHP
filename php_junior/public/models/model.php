@@ -17,26 +17,22 @@ class Model {
             $itemsDataObj[] = new Item($item);
         }
 
-        var_dump($itemsDataObj);
-        exit;
         return $itemsDataObj;
     }
 
-
-    public function getDataImages()
+    public function getCars()
     {
-        $imagesData = [
-            ['id' => '1', 'img' => 'assets/images/monitor.jpeg'],
-            ['id' => '2', 'img' => 'assets/images/computer.jpg'],
-            ['id' => '3', 'img' => 'assets/images/notebook.jpg'],
-            ['id' => '4', 'img' => 'assets/images/printer.jpg'],
-            ['id' => '7', 'img' => 'assets/images/wardrobe.jpg'],
-            ['id' => '8', 'img' => 'assets/images/armchair.jpg']
-        ];
-        return $imagesData;
+        $db = Database::getInstance();
+        $db_connect = $db->connection;
+        $result = $db_connect->query('SELECT * FROM cars');
+        $data = $result->fetch_all(MYSQLI_ASSOC);
+        return $data;
     }
 
 }
+
+
+
 
 class Item {
     public $id;

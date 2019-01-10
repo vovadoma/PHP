@@ -60,3 +60,12 @@ function writeArrItemPriceAndImage($f_item){
     return $f_item;
 }
 
+function indexAd(){
+    $model = new Model();
+    $items = $model->getCars();
+    echo json_encode($items);
+}
+
+function indexCars() {
+
+}
