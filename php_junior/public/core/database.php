@@ -48,3 +48,22 @@ class Database {
         $this->connection->set_charset("utf8");
     }
 }
+
+class DB {
+    public static $connection;
+    public static function init($config = []) {
+        if(!self::$connection) {
+            self::$connection = new mysqli($config['host'], $config['user'], $config['password'], $config['db']);
+            if (self::$connection->connect_errno)
+            {
+                printf(self::$connection->connection->connect_error);
+                exit();
+            }
+        }
+        return self::$connection;
+    }
+
+    public static function connection() {
+        return self::$connection;
+    }
+}

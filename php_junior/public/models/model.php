@@ -22,8 +22,7 @@ class Model {
 
     public function getCars()
     {
-        $db = Database::getInstance();
-        $db_connect = $db->connection;
+        $db_connect = DB::connection();
         $result = $db_connect->query('SELECT * FROM cars');
         $data = $result->fetch_all(MYSQLI_ASSOC);
         return $data;

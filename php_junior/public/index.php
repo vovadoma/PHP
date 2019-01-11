@@ -2,24 +2,36 @@
 require 'config/config.php';
 require 'core/database.php';
 require 'controllers/home.php';
+require 'controllers/json.php';
 
 $config = config('db');
-// init DB connection
-// 1
-//initGlobalDbConnection($config);
-//$db_connect = $global_db_connection;
+$db = DB::init($config);
 
-// 2
-//db();
-//$db_connect = db($config);
+// Routes
+$routes['page'] = isset($_GET['page']) ? $_GET['page'] : 'home';
+$routes['act'] = isset($_GET['act']) ? $_GET['act'] : 'cars';
 
-// 3
-$db = Database::getInstance($config);
-$db_connect = $db->connection;
+//var_dump($routes);
+
+switch ($routes['page']) {
+    case 'json': {
+        $c = new JsonController();
+        break;
+    }
+    default: {
+        $c = new HomeController();
+    }
+}
+
+switch ($routes['act']) {
+    case 'cars': {
+        $c->cars();
+        break;
+    }
+    default: {
+        $c->index();
+    }
+}
 
 
-//indexHome();
-
-
-indexAd();
 
