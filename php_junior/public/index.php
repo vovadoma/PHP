@@ -8,30 +8,47 @@ $config = config('db');
 $db = DB::init($config);
 
 // Routes
-$routes['page'] = isset($_GET['page']) ? $_GET['page'] : 'home';
-$routes['act'] = isset($_GET['act']) ? $_GET['act'] : 'cars';
+$param['page'] = isset($_GET['page']) ? $_GET['page'] : 'home';
+$param['act'] = isset($_GET['act']) ? $_GET['act'] : 'index';
 
-//var_dump($routes);
+var_dump($param);
+//exit;
+$name = $param['page'];
+$act = $param['act'];
 
-switch ($routes['page']) {
-    case 'json': {
-        $c = new JsonController();
-        break;
-    }
-    default: {
-        $c = new HomeController();
-    }
-}
+// easy
+//$c = new $name();
+//$c->$act();
 
-switch ($routes['act']) {
-    case 'cars': {
-        $c->cars();
-        break;
-    }
-    default: {
-        $c->index();
-    }
-}
+$routes = [
+    ['url' => 'home/index', 'do' => 'HomeController/index'],
+    ['url' => 'auth/login', 'do' => 'LoginController/index']
+];
+
+$route = array_filter($routes, function ($el) use($name, $act) {
+    return ($el['url'] == $name.'/'.$act);
+})[0];
+
+list($contoller, $action) = explode('/', $route['do']);
+$c = new $contoller();
+$c->$action();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

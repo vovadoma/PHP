@@ -4,8 +4,11 @@ require_once 'models/model.php';
 class HomeController
 {
 
-    function index()
+    public function index()
     {
+        echo 'home/index';
+        exit;
+
         $model = new Model();
         $data = [
             'items' => $model->getDataItems()
