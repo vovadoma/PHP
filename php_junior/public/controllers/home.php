@@ -6,6 +6,9 @@ class HomeController
 
     public function index()
     {
+        $model = new Model();
+        $user = $items = $model->getUser();
+
         echo 'home/index';
         exit;
 

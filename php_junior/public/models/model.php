@@ -28,6 +28,28 @@ class Model {
         return $data;
     }
 
+    public function getUser()
+    {
+        $id = 5;
+        $db_connect = DB::connection();
+        $stmt = $db_connect->stmt_init();
+        $stmt->prepare('SELECT * FROM cars WHERE ID = ?');
+        $stmt->bind_param('i', $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $data = $result->fetch_row();
+        var_dump($data);
+        return $data;
+    }
+
+    public function newUser()
+    {
+        $db_connect = DB::connection();
+        $result = $db_connect->query('SELECT * FROM cars');
+        $data = $result->fetch_all(MYSQLI_ASSOC);
+        return $data;
+    }
+
 }
 
 
