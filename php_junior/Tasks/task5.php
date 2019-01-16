@@ -1,0 +1,3 @@
+1) Переделываем роуты на /login/.....
+2) Доделываем LoginController - login / register
+3) Функция redirect('путь') - в core
