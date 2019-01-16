@@ -4,6 +4,12 @@ require_once 'models/model.php';
 class LoginController
 {
 
+    protected $model;
+
+    function __construct() {
+        $this->model = new UserModel();
+    }
+
     public function login(){
         if (!empty($_POST)) {
             $email = $_POST['email'];
