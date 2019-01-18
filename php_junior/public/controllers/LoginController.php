@@ -19,7 +19,7 @@ class LoginController
             }
             $password = $_POST['password'];
             if (md5($password) == $user['password']) {
-                $_SESSION['login_user_id'] = $user['id'];
+                Auth::login($user['id']);
             } else {
                 redirect('login');
             }
