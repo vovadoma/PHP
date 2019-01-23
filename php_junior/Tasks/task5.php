@@ -18,3 +18,4 @@
 12) Показ одного (использование ид товара в ссылке) делаем роут типа /show?id=5
 13) Функция route($routName, [params, ...])
 14) Роуты делаем из двух - типа auth/login
+15) Загрузка аватара - http://php.net/manual/ru/features.file-upload.post-method.php
