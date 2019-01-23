@@ -1,4 +1,9 @@
 <?php
+
+print_r($_SERVER);
+
+exit;
+
 require 'config/config.php';
 require 'core/database.php';
 require 'controllers/HomeController.php';
