@@ -21,4 +21,4 @@
 15) Загрузка аватара - http://php.net/manual/ru/features.file-upload.post-method.php
 ----
 16) Используем Trait для хранения функций валидации
-
+17)* function update делаем с параметрами массив [поле => значение]
