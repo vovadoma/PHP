@@ -1,0 +1,1 @@
+ALTER TABLE `items` ADD `price` VARCHAR(100)  NULL  DEFAULT NULL  AFTER `desc`;
