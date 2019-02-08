@@ -68,3 +68,12 @@ class ItemModel extends Model {
 
 
 }
+
+ $order = ['priceUp', 'category.name'];
+ 
+ https://rozetka.com.ua/boats/c86168/sort=expensive/
+ 
+ 
+ https://rozetka.com.ua/ladja_lt220dc/p2644492/
+ 
+ https://www.citrus.ua/noutbuki-i-ultrabuki/apple-macbook-air-mqd32-614780.html
