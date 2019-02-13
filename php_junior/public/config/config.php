@@ -8,7 +8,10 @@ function getNoImage() {
 function config($type) {
     $all_config = [
         'db' => [
-            'host' => 'localhost', 'user' => 'root', 'password' => 'root', 'db' => 'shop'
+            'host' => 'localhost',
+            'user' => 'root',
+            'password' => env('DB_PASSWORD'),
+            'db' => 'shop'
         ]
     ];
     $result = $all_config[$type];

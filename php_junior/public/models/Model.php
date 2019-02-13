@@ -10,6 +10,11 @@ class Model {
         $this->connect = DB::connection();
     }
 
+    /*
+     * Delete record by ID
+     * @param $id int
+     * @return $result bool
+     */
     public function delete($id) {
         $stmt = $this->connect->prepare("DELETE FROM $this->table WHERE id = ? ");
         $stmt->bind_param('i', $id);
