@@ -12,6 +12,9 @@
 9) Комментарии для функций, методов
 10) Создать файл окружения .env используя библиотеку https://github.com/symfony/dotenv
 
+11) Установить WordPress и Laravel
+
+
 P.S. Amazon API
 
 https://proglib.io/p/50-php-libraries/

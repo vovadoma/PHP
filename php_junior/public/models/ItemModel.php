@@ -30,7 +30,7 @@ class ItemModel extends Model {
                 $sql .= 'price < ?';
             }
             if (key_exists('ids', $filter)) {
-                $sql .= 'id IN ?';
+                $sql .= 'id IN (:ids)';
                 $filter['ids'] = "(". join(",", $filter['ids']) .")";
             }
         }
